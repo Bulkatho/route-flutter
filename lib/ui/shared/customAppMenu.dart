@@ -54,6 +54,14 @@ class _TableDesktopMenu extends StatelessWidget {
             onPressed: () => locator<NavigationService>().navigateTo('/xyz123'),
             color: Colors.black,
           ),
+
+          const SizedBox(width: 10),
+
+          CustomFlatButtom(
+            text: 'Stateful 100',
+            onPressed: () => locator<NavigationService>().navigateTo('/stateful/100'),
+            color: Colors.black,
+          ),
         ],
       )
     );
@@ -89,6 +97,14 @@ class _MobileMenu extends StatelessWidget {
           CustomFlatButtom(
             text: 'Otra pagina',
             onPressed: () => locator<NavigationService>().navigateTo('/xyz123'),
+            color: Colors.black,
+          ),
+
+          const SizedBox(width: 10),
+
+          CustomFlatButtom(
+            text: 'Stateful 100',
+            onPressed: () => locator<NavigationService>().navigateTo('/stateful/100'),
             color: Colors.black,
           ),
         ],
