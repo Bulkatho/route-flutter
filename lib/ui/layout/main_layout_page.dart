@@ -13,7 +13,7 @@ class MainLayoutPage extends StatelessWidget {
       body: Center(
         child: Column(
           children: [
-            CustomAppMenu(),
+            const CustomAppMenu(),
             const Spacer(),
             
             Expanded(child: child),

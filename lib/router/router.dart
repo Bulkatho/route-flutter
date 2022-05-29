@@ -1,6 +1,4 @@
-import 'package:bases_web/ui/views/counter_provider_view.dart';
-import 'package:bases_web/ui/views/counter_view.dart';
-import 'package:bases_web/ui/views/view_404.dart';
+import 'package:bases_web/router/route_handlers.dart';
 import 'package:fluro/fluro.dart';
 
 class Flurorouter {
@@ -15,51 +13,16 @@ class Flurorouter {
     * /provider
     */
     
-    router.define(
-      '/', 
-      handler: _counterHandler, 
-      transitionType: TransitionType.fadeIn
-    );
-
-    router.define(
-      '/stateful',
-      handler: _counterHandler, 
-      transitionType: TransitionType.fadeIn
-    );
-
-    router.define(
-      '/stateful/:base',
-      handler: _counterHandler, 
-      transitionType: TransitionType.fadeIn
-    );
-
-    router.define(
-      '/provider',
-      handler: _counterProviderHandler, 
-      transitionType: TransitionType.fadeIn
-    );
-
-    router.notFoundHandler = _pageNotFound;
+    //Stateful Routes.
+    router.define( '/', handler: counterHandler, transitionType: TransitionType.fadeIn );
+    router.define( '/stateful', handler: counterHandler,  transitionType: TransitionType.fadeIn );
+    router.define( '/stateful/:base', handler: counterHandler, transitionType: TransitionType.fadeIn );
+    
+    //Provider Routes.
+    router.define('/provider',handler: counterProviderHandler, transitionType: TransitionType.fadeIn );
+    
+    //404 - page not found.
+    router.notFoundHandler = pageNotFound;
 
   }
-
-  //Handlers - View/Page
-
-  // CounterView
-  static Handler _counterHandler = Handler(
-    handlerFunc: ( context, params) {
-      return CounterView(base: params['base']?[0] ?? '5');
-    }
-  );
-
-  // CounterProviderView
-  static Handler _counterProviderHandler = Handler(
-    handlerFunc: (context, parameters) => CounterProviderView(),
-  );
-
-  // 404
-  static Handler _pageNotFound = Handler(
-    handlerFunc: ( context , __ ) => View404(),
-  );
-
 }

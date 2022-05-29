@@ -20,11 +20,11 @@ class _CounterPageState extends State<CounterPage> {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
 
-          CustomAppMenu(),
+          const CustomAppMenu(),
 
-          Spacer(),
+          const Spacer(),
 
-          Text('Contador Stateful', style: TextStyle(fontSize: 20)),
+          const Text('Contador Stateful', style: TextStyle(fontSize: 20)),
 
           FittedBox(
             fit: BoxFit.contain,
@@ -49,7 +49,7 @@ class _CounterPageState extends State<CounterPage> {
               ),
             ],
           ),
-          Spacer(),
+          const Spacer(),
         ],
       ),
     );

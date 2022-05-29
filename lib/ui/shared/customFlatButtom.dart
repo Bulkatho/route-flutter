@@ -1,3 +1,4 @@
+// ignore: file_names
 import 'package:flutter/material.dart';
 
 
@@ -17,11 +18,11 @@ class CustomFlatButtom extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TextButton(
-      style: TextButton.styleFrom(primary: this.color),
-      onPressed: () => this.onPressed(),
+      style: TextButton.styleFrom(primary: color),
+      onPressed: () => onPressed(),
       child: Padding(
         padding: const EdgeInsets.all(10),
-        child: Text(this.text),
+        child: Text(text),
       )
     );
   }

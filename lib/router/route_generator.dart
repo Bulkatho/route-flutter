@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+//import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart' show kIsWeb;
 
@@ -13,9 +13,9 @@ class RouteGenerator {
       case '/stateful':
         return _fadeRoute( const CounterView(base: '5',), '/stateful' );
       case '/provider':
-        return _fadeRoute( const CounterProviderView(), '/provider');
+        return _fadeRoute( const CounterProviderView(base: '10'), '/provider');
       default:
-        return _fadeRoute( View404(), '/404' );
+        return _fadeRoute( const View404(), '/404' );
     }
   }
 
@@ -31,9 +31,9 @@ class RouteGenerator {
           )
         : CupertinoPageTransition(
             primaryRouteAnimation: animation, 
-            secondaryRouteAnimation: __, 
-            child: child, 
-            linearTransition: true
+            secondaryRouteAnimation: __,
+            linearTransition: true, 
+            child: child
           )
     );
   }
